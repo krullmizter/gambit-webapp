@@ -1,0 +1,21 @@
+.table {
+    background: $light;
+    color: $dark;
+    border-radius: 5px;
+
+    &-categories {
+        @include gridUtil();
+
+        p {
+            font-weight: 600;
+        }
+    }
+}
+
+.row {
+    @include gridUtil();
+
+    &:nth-of-type(even) {
+        background-color: $grey;
+    }
+}
