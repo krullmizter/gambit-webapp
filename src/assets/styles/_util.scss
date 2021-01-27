@@ -1,16 +1,16 @@
 @mixin gridUtil {
     display: grid;
     grid-gap: 5%;
-    align-items: center;
-    padding: 1rem;
+    padding: 2.5% 5%;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 
     @media screen and (max-width: $bp-tablet) {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
 
-    & > :first-child {
+    /*> :nth-child(1n) {
         display: flex;
         justify-content: center;
-    }
+        align-items: center;
+    }*/
 }

@@ -10,7 +10,7 @@
       </div>
       <div class="row" v-for="edge in $static.registers.edges" :key="edge.node.id">
         
-        <div class="col">            
+        <div class="col">    
           <p>{{ edge.node.id }}</p>
         </div>
         <div class="col">            
@@ -51,6 +51,5 @@ query {
 
 <script>
 export default {
-
 }
 </script>

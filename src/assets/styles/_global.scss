@@ -9,17 +9,10 @@ body {
 }
 
 .layout {
-    min-height: 100vh;
     margin: 0 auto;
     padding: 0 2rem;
 
     @media screen and (min-width: $bp-tablet-lg) {
         max-width: 65vw;
     }
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    padding: 1rem 0;
 }
