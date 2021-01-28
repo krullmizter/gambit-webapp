@@ -11,4 +11,6 @@ This project uses:
 - Gridsome (https://gridsome.org/)
 - SCSS
 
-I chose Gridsome beacuse if its simplicity and easy of use when working with smaller sets of data, and less UI intensive code. I find Vue.js easy to work with, having both used it in my studies and in personal projects. SCSS is just a must have in todays frontend tasks. I really like this techstack, it's awesome 🤟
+I chose Gridsome because if its simplicity and easy of use when working with smaller sets of data, and less UI intensive code + it uses the GraphQL for its data layer. I find Vue.js easy to work with, having both used it in my studies and in personal projects. SCSS is just a must have in todays frontend tasks. I really like this techstack, it's awesome 🤟
+
+The data table is a custom CSS grid vue component that takes in data from the `data/registers.json` file. I can then query that data from the GraphQL data layer into the given component via the `static-query` block in the vue component. The `query` selector lets me choose the sorting and filtering order by which the data should be presented.

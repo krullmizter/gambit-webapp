@@ -2,7 +2,7 @@
   <Layout>
 
     <h1>Gambit Challenge #2</h1>
-    <h5>Made by: Samuel Granvik</h5>
+    <h5>Made by me: <a href="https://github.com/krullmizter" target="_blank">Samuel Granvik</a></h5>
     <h5>Made with:</h5>
     <ul>
       <li>Vue.js</li>

@@ -22,5 +22,29 @@
 		"var_name": "Velocity",
 		"format": "REAL4",
 		"note": "Unit: m/s"
+	},
+	{
+		"id": 4,
+		"register": "0005-0006",
+		"numbers": "2",
+		"var_name": "Velocity",
+		"format": "REAL4",
+		"note": "Unit: m/s"
+	},
+	{
+		"id": 5,
+		"register": "0005-0006",
+		"numbers": "2",
+		"var_name": "Velocity",
+		"format": "REAL4",
+		"note": "Unit: m/s"
+	},
+	{
+		"id": 6,
+		"register": "0005-0006",
+		"numbers": "2",
+		"var_name": "Velocity",
+		"format": "REAL4",
+		"note": "Unit: m/s"
 	}
 ]

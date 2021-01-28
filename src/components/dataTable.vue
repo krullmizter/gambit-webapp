@@ -11,22 +11,22 @@
       <div class="row" v-for="edge in $static.registers.edges" :key="edge.node.id">
         
         <div class="col">    
-          <p>{{ edge.node.id }}</p>
+          <p><span>ID: </span>{{ edge.node.id }}</p>
         </div>
         <div class="col">            
-          <p>{{ edge.node.register }}</p>
+          <p><span>Register: </span>{{ edge.node.register }}</p>
         </div>
         <div class="col">            
-          <p>{{ edge.node.numbers }}</p>
+          <p><span>Numbers: </span>{{ edge.node.numbers }}</p>
         </div>
         <div class="col">            
-          <p>{{ edge.node.var_name }}</p>
+          <p><span>Variable Name: </span>{{ edge.node.var_name }}</p>
         </div>
         <div class="col">            
-          <p>{{ edge.node.format }}</p>
+          <p><span>Format: </span>{{ edge.node.format }}</p>
         </div>
         <div class="col">            
-          <p>{{ edge.node.note }}</p>
+          <p><span>Note: </span>{{ edge.node.note }}</p>
         </div>
       </div>
   </div>
@@ -51,5 +51,7 @@ query {
 
 <script>
 export default {
+
+  
 }
 </script>
