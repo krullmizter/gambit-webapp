@@ -1,30 +1,27 @@
-h1 {
-    font-size: 6rem;
+@for $i from 1 through 6 {
+    h#{$i} {
+      font-size: $base-font-size + $heading-scale * (6 - $i);
+      margin: $font-margin;
+    }
 }
 
-h2 {
-    font-size: 5rem;
-}
-
-h3 {
-    font-size: 4rem;
-}
-
-h4 {
-    font-size: 3rem;
-}
-
-h5 {
-    font-size: 2.75rem;
-}
-
-h6 {
-    font-size: 2.5rem;
+ul {
+    margin: $font-margin;
 }
 
 p,
 a,
 li,
 span {
-    font-size: 2.25rem;
+    font-size: $base-font-size;
+}
+
+a {
+    color: $light;
+    text-decoration: none;
+    transition: .2s;
+
+    &:hover {
+        border-bottom: 1px solid $light;
+    }
 }

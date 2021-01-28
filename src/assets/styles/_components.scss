@@ -3,7 +3,7 @@
     color: $light;
     border-radius: 5px;
     overflow: hidden;
-    margin: 1rem 0;
+    margin: 2.5rem 0;
 
     &-categories {
         @include gridUtil();
@@ -16,22 +16,22 @@
             display: none;
         }
     }
-}
 
-.row {
-    @include gridUtil();
-
-    &:nth-of-type(even) {
-        background-color: $light-grey;
-    }
-
-    .col {
-
-        span {
-            font-weight: 600;
-
-            @media screen and (min-width: $bp-tablet-lg + 1) {
-                display: none;
+    .row {
+        @include gridUtil();
+    
+        &:nth-of-type(even) {
+            background-color: $light-grey;
+        }
+    
+        .col {
+    
+            span {
+                font-weight: 600;
+    
+                @media screen and (min-width: $bp-tablet-lg + 1) {
+                    display: none;
+                }
             }
         }
     }
