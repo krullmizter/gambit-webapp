@@ -1,4 +1,8 @@
 module.exports = {
   siteName: 'Gambit Challenge #2',
-  plugins: []
+  plugins: [],
+
+  siteUrl: 'https://krullmizter.github.io',
+  pathPrefix: '/gambit-app',
 }
+

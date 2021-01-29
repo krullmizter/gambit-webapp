@@ -75,7 +75,6 @@ export default {
     title: 'Gambit Challenge'
   },
   components: {
-    dataTable,
     Pager
   }
 }
