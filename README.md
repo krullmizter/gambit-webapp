@@ -15,7 +15,7 @@ This project uses:
     * [GraphQL](https://graphql.org/)
 - [SCSS](https://sass-lang.com/)
 - [FontAwesome](https://fontawesome.com/)
-- [GitHub pages](https://github.com/krullmizter/gambit-app)
+- [GitHub pages](https://krullmizter.github.io/gambit-app/)
 
 ---
 
