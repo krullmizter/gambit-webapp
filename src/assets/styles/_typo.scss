@@ -5,6 +5,12 @@
     }
 }
 
+h1 {
+    @media screen and (max-width: $bp-mobile) {
+        font-size: 4.5rem;
+    }
+}
+
 ul {
     margin: $font-margin;
 }
@@ -22,6 +28,6 @@ a {
     transition: .2s;
 
     &:hover {
-        border-bottom: 1px solid $light;
+        color: $accent;
     }
 }

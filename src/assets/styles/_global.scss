@@ -1,3 +1,7 @@
+::selection {
+    background-color: $accent;
+}
+
 html {
     font-size: 62.5%; // Use REM
 }
@@ -9,15 +13,36 @@ body {
 }
 
 .layout {
+    position: relative;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2%;
 
-    @media screen and (min-width: $bp-tablet-lg) {
+    @media screen and (min-width: $bp-tablet-lg + 1) {
         max-width: 70vw;
+    }
+
+    .content {
+        padding-bottom: 2rem;
     }
 }
 
 .footer {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 1rem;
+    width: 100%;
     text-align: center;
-    padding: 2rem;
+
+    &-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & >:first-of-type {
+            margin-right: 5px;
+        }
+    }
 }

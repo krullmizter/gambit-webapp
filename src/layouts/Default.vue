@@ -1,8 +1,15 @@
 <template>
   <div class="layout">
-    <slot/>
+    <div class="content">
+      <slot/>
+    </div>
     <footer class="footer">
-      <p>&copy; Samuel Granvik</p>
+      <p>Samuel Granvik</p> 
+
+      <div class="footer-links">
+        <p><font-awesome :icon="['fas', 'copyright']"/></p>
+        <a href="https://github.com/krullmizter/gambit-app" target="_blank"><font-awesome :icon="['fab', 'github']"/></a>
+      </div>
     </footer>
   </div>
 </template>

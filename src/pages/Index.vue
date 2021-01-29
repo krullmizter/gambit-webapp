@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <Pager :info="$page.registers.pageInfo"/>
+    <Pager class="navigation" :info="$page.registers.pageInfo"/>
   </Layout>
 </template>
 
