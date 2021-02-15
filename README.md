@@ -1,4 +1,4 @@
-# Gambit challenge #2 
+# Gambit challenge #2 | Webapp
 #### Made by: Samuel Granvik
 
 
