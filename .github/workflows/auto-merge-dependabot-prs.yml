@@ -10,7 +10,7 @@ on:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: Checkout repository
@@ -32,25 +32,28 @@ jobs:
         with:
           script: |
             const { github, context } = require('@actions/github');
+            const core = require('@actions/core');
 
             const pullRequest = context.payload.pull_request;
 
             if (!pullRequest) {
-              core.setFailed("No pull request context found.");
+              core.warning("No pull request context found. Skipping PR merge.");
               return;
             }
 
-            const mergeable = pullRequest.mergeable;
-            const mergeableState = pullRequest.mergeable_state;
+            console.log(`PR number: ${pullRequest.number}`);
+            console.log(`Mergeable state: ${pullRequest.mergeable_state}`);
 
-            if (mergeable && mergeableState === "clean") {
+            const isMergeable = pullRequest.mergeable && pullRequest.mergeable_state === 'clean';
+
+            if (isMergeable) {
               await github.rest.pulls.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: pullRequest.number,
-                merge_method: "squash",
+                merge_method: 'squash',
               });
               console.log("PR merged successfully.");
             } else {
-              core.setFailed("PR is not mergeable.");
+              core.setFailed(`PR is not mergeable. State: ${pullRequest.mergeable_state}`);
             }
