@@ -24,6 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Audit and Fix Vulnerabilities
+        run: |
+          npm audit fix --force
+
       - name: Check for test script
         id: check-test-script
         run: |
@@ -41,9 +45,6 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            const { github, context } = require('@actions/github');
-            const core = require('@actions/core');
-
             const pullRequest = context.payload.pull_request;
 
             if (!pullRequest) {
