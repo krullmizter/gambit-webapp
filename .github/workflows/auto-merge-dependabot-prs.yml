@@ -24,7 +24,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
+      - name: Check for test script
+        id: check-test-script
+        run: |
+          if grep -q '"test":' package.json; then
+            echo "has_tests=true" >> $GITHUB_ENV
+          else
+            echo "has_tests=false" >> $GITHUB_ENV
+          fi
+
+      - name: Run tests if available
+        if: ${{ env.has_tests == 'true' }}
         run: npm test
 
       - name: Merge PR
