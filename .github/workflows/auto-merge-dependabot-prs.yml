@@ -28,33 +28,29 @@ jobs:
         run: npm test
 
       - name: Merge PR
-        if: ${{ github.actor == 'dependabot[bot]' }}
         uses: actions/github-script@v4
         with:
           script: |
-            const core = require('@actions/core');
             const { github, context } = require('@actions/github');
-            
-            const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
-            try {
-              const { data: pullRequest } = await octokit.rest.pulls.get({
+            const pullRequest = context.payload.pull_request;
+
+            if (!pullRequest) {
+              core.setFailed("No pull request context found.");
+              return;
+            }
+
+            const mergeable = pullRequest.mergeable;
+            const mergeableState = pullRequest.mergeable_state;
+
+            if (mergeable && mergeableState === "clean") {
+              await github.rest.pulls.merge({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                pull_number: context.payload.pull_request.number,
+                pull_number: pullRequest.number,
+                merge_method: "squash",
               });
-
-              if (pullRequest.mergeable && pullRequest.mergeable_state === "clean") {
-                await octokit.rest.pulls.merge({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  pull_number: context.payload.pull_request.number,
-                  merge_method: "squash",
-                });
-                console.log("PR merged successfully.");
-              } else {
-                core.setFailed("PR is not mergeable.");
-              }
-            } catch (error) {
-              core.setFailed(`Error during merge: ${error.message}`);
+              console.log("PR merged successfully.");
+            } else {
+              core.setFailed("PR is not mergeable.");
             }
