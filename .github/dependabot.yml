@@ -12,17 +12,8 @@ updates:
       security:
         patterns:
           - ".*"
-        labels:
-          - "security"
     labels:
       - "dependencies"
-      - "auto-merge"
       - "npm"
     reviewers:
       - "krullmizter"
-    security-updates: true
-
-auto-merge:
-  - match:
-      dependency_type: "all"
-      update_type: "semver:minor"
