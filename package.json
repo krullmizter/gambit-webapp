@@ -18,7 +18,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "node-sass": "^9.0.0",
-    "sass-loader": "^16.0.4",
+    "sass-loader": "^16.0.5",
     "style-resources-loader": "^1.5.0"
   }
 }
