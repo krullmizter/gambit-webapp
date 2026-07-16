@@ -9,13 +9,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^7.3.0",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "gh-pages": "^6.3.0",
     "gridsome": "^0.7.23"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.3.0",
-    "@fortawesome/free-brands-svg-icons": "^7.3.0",
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/vue-fontawesome": "^3.3.2",
     "node-sass": "^9.0.0",
     "sass-loader": "^17.0.0",
